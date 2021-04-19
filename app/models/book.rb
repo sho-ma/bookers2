@@ -1,5 +1,5 @@
 class Book < ApplicationRecord
 
-  belongs_to :user
-  attachment :image
+  belongs_to :user, optional: true
+  attachment :profile_image
 end

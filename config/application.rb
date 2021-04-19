@@ -17,3 +17,5 @@ module Bookers2
     # the framework and any gems in your application.
   end
 end
+
+Refile.secret_key = 'ca94a5aa64cfc9ef2ad1c09abd09339141cd781903ab4db3056b94c836d502511e68f62393e8b2b15f54686bd29d03c334863ee4ffe0183d40b2cd177120137c'
