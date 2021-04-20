@@ -1,13 +1,13 @@
 <main>
     <div class="container px-5 px-sm-0">
        <div class="row">
-          <%= render'books/list', book:@book %>
+          <%= render'books/list', book:@book, user:current_user %>
              <div class="col-md-8 offset-md-1">
                 <h2>Book detail</h2>
                 <table class="table">
                    <tbody>
                       <tr>
-                          <td><%= attachment_image_tag book.user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %><p><%= link_to"#{current_user.name}", user_path(current_user.id) %></p></td>
+                          <td><%= attachment_image_tag @book.user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %><p><%= link_to @book.user.name, user_path(@book.user.id) %></p></td>
                           <td><%= link_to @book.title %></td>
                           <td><%= @book.opinion %></td>
                           <td><%= link_to'Edit', edit_book_path(@book.id), class: "btn btn-success" %></td>
