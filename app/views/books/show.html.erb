@@ -7,11 +7,13 @@
                 <table class="table">
                    <tbody>
                       <tr>
-                          <td><%= attachment_image_tag @book.user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %><p><%= link_to @book.user.name, user_path(@book.user.id) %></p></td>
+                          <td><%= attachment_image_tag @book.user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg" %><p><%= link_to @book.user.name, user_path(@book.user.id) %></p></td>
                           <td><%= link_to @book.title %></td>
                           <td><%= @book.opinion %></td>
+                          <% if @book.user.id == current_user.id %>
                           <td><%= link_to'Edit', edit_book_path(@book.id), class: "btn btn-success" %></td>
                           <td><%= link_to'Destroy',book_path(@book), method: :delete, data: {confirm: '本当に削除しますか?'}, class: "btn btn-danger" %></td>
+                          <% end %>
                       </tr>
                    </tbody>
                 </table>
